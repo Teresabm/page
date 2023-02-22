@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-cta: #fce22a;
+  --color-subtext: #7f7c82;
+}
+body {
+  font-family: "Questrial", sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto(1fr);
+  grid-template-areas:
+    "header"
+    "hero"
+    "services"
+    "footer";
+}
+.header {
+  grid-area: header;
+  height: 100px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav__link {
+  text-decoration: none;
+  color: black;
+  font-size: calc(0.5rem + 0.8vw);
+  color: var(--color-subtext);
+}
+.nav__link--cta {
+  background-color: var(--color-cta);
+  padding: 10px 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px black;
+  color: black;
+}
+.hero {
+  grid-area: hero;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 20%;
+}
+.hero__title {
+  font-size: calc(2rem + 0.8vw);
+}
+.hero__subtitle {
+  font-size: calc(0.7rem + 0.8vw);
+  color: var(--color-subtext);
+}
+.hero__ctas {
+  display: flex;
+}
+.cta__btn {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px 20px;
+  margin-right: 20px;
+  box-shadow: 2px 2px black;
+  text-decoration: none;
+  color: black;
+}
+.cta__btn--color {
+  background-color: var(--color-cta);
+}
+.hero__figure {
+  background-image: url(assets/img.png);
+  background-position: center;
+  background-size: 70%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.services {
+  grid-area: services;
+  height: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.services__item {
+  width: 40%;
+  height: 90%;
+  background-color: #f7c8e0;
+  display: flex;
+  border-radius: 20px;
+  border: 1ps solid black;
+  box-shadow: 4px 4px black;
+}
+.services__item--bgcolor {
+  background-color: var(--color-cta);
+}
+.item__img {
+  width: 50%;
+  background-image: url(assets/Group\ 6.png);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+}
+.item__img--other {
+  background-image: url(assets/Group\ 7.png);
+}
+.item__info {
+  width: 50%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.item__text,
+.item__subtext {
+  padding-bottom: 10px;
+}
+.item__subtext {
+  color: var(--color-subtext);
+}
+.item__link {
+  color: black;
+}
+.footer {
+  grid-area: footer;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__menu {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__link {
+  padding: 0px 10px;
+  text-decoration: none;
+  color: var(--color-subtext);
+}
+.footer__info {
+  width: 30%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.info__link {
+  text-decoration: none;
+  color: var(--color-subtext);
+}
+@media (max-width: 765px) {
+    .hero{
+        height: 400px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+        "info"
+        "figure";
+    }
+    .hero__info{
+        grid-area: info;
+        text-align: center;
+        padding-left: 0;
+    }
+    .hero__ctas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    .hero__figure{
+        grid-area: figure;
+    }
+    .services{
+        flex-direction: column;
+        height: 500px;
+    }
+    .services__item{
+        width: 90%;
+        height: 40%;
+    }
+    .footer{
+        flex-direction: column;
+    }
+    .footer__menu{
+        width: 90%;
+        height: 40%;
+    }
+    .footer__info{
+        width: 90%;
+        height: 40%;
+        justify-content: center;
+    }
+}
